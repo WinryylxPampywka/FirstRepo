@@ -1,8 +1,9 @@
 import logging
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,
                     filename='logs.log',
                     filemode='a',
                     format="%(levelname)s:%(asctime)s")
+
 
 class NameSurname:
    def  __init__(self, name, surname):
@@ -21,7 +22,6 @@ class Student:
         self.age = age
         self.height = height
         Student.student_amout += 1
-        logging.info(f'Create new student {self.ns.name} {self.ns.surname}')
 
     def printStudent(self):
         print(f'Name: {self.ns.name}')
@@ -30,11 +30,17 @@ class Student:
         print(f'Height: {self.height}')
 
 #print(f'before creating Student object {Student.student_amout}')
+
+logging.info("start program")
 try:
     first_student = Student("Ilya", "kosilo", 14)
+    logging.info(f'Create new student {first_student.ns.name} {first_student.ns.surname}')
     second_student = Student("Pampywka", "RIshyska", 9)
+    print(f'Start programm')
 except Exception as error:
-    print(error)
+
+
+
     logging.error("error")
 #first_student.printStudent()
 #print(f'after creating Student object  {first_student.student_amout}')
@@ -42,7 +48,7 @@ except Exception as error:
 #print("Next code")
 #firs_student.Birthday()
 
-
+logging.info("finish program")
 
 class Animal:
     def __init__(self,name,weight,quantity):
