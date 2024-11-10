@@ -1,4 +1,9 @@
-class NameSurname:
+import logging
+logging.basicConfig(level=logging.INFO,
+                    filename='logs.log',
+                    filemode='a',
+                    format="%(levelname)s:%(asctime)s")
+    class NameSurname:
    def  __init__(self, name, surname):
        if(type(name)!= str):
           raise TypeError(f"Name or Surname is not a string")
@@ -47,5 +52,6 @@ class Animal:
             print(f'Weight: {self.ns.weight}')
             print(f'Quantity: {self.ns.quantity}')
     print(f'Name: Cat, Weight: 8 kg,Quantity: 1 ')
+
 
 
