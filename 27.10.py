@@ -3,7 +3,8 @@ logging.basicConfig(level=logging.INFO,
                     filename='logs.log',
                     filemode='a',
                     format="%(levelname)s:%(asctime)s")
-    class NameSurname:
+
+class NameSurname:
    def  __init__(self, name, surname):
        if(type(name)!= str):
           raise TypeError(f"Name or Surname is not a string")
@@ -20,6 +21,7 @@ class Student:
         self.age = age
         self.height = height
         Student.student_amout += 1
+        logging.info(f'Create new student {self.ns.name} {self.ns.surname}')
 
     def printStudent(self):
         print(f'Name: {self.ns.name}')
@@ -30,8 +32,10 @@ class Student:
 #print(f'before creating Student object {Student.student_amout}')
 try:
     first_student = Student("Ilya", "kosilo", 14)
+    second_student = Student("Pampywka", "RIshyska", 9)
 except Exception as error:
     print(error)
+    logging.error("error")
 #first_student.printStudent()
 #print(f'after creating Student object  {first_student.student_amout}')
 
